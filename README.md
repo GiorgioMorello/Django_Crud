@@ -1,6 +1,7 @@
 
 <h1>CRUD completo com Django e JS Vanilla</h1>
- 
+ <br><br><br>
+
  
  
  
