@@ -35,7 +35,7 @@ function fill_person_data(person_data) {
     persons.innerHTML = '';
     for (person of person_data) {
         persons.innerHTML += `<li class="flex card">
-                                <a class="text-card" href="/main/editar/${person.id}">${person.id} - ${person.nome}</a>
+                                <a class="text-card" href="/usuarios/editar/${person.id}">${person.id} - ${person.nome}</a>
                                 <button class="delete-btn" onclick="delete_url(${person.id}, '${person.nome}')">Deletar</button>
                            </li>`
 
@@ -164,7 +164,7 @@ function delete_url(id, nome, e) {
                 set_time(1);
 
                 setTimeout(()=> {
-                    location.replace("/usuarios/")
+                    location.replace("/usuarios/") // Mudar para a url usuarios
                 }, 1500)
 
             }
