@@ -55,6 +55,7 @@ def editar(r, id):
 
 
 def update(r, id):
+    # UPDATE
     body_r = json.loads(r.body)
     nome = body_r['nome']
     email = body_r['email']
