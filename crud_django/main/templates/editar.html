@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Editar Usuário
+{% endblock %}
+
+
+{% block body %}
+
+
+
+
+
+    <div class="group">
+        <h2>Dados</h2>
+        <div class="info">
+            <div class="group-info">
+                <p class="info-p">Nome: </p><span id="info-name">{{ pessoa.nome }}</span>
+            </div>
+            <div class="group-info">
+                <p class="info-p">E-mail: </p><span id="info-email">{{ pessoa.email }}</span>
+            </div>
+            <button class="delete-btn" onclick="delete_url({{ pessoa.id }}, '{{ pessoa.nome }}', event)" style="margin-top: 0">Deletar</button>
+        </div>
+
+
+        <form method="POST" action="" class="flex-form">{% csrf_token %}
+            <input type="text" class="input" placeholder="Digite seu nome" value="{{ pessoa.nome }}" id="nome">
+            <input type="email" class="input" placeholder="Digite seu email" value="{{ pessoa.email }}" id="email">
+            <input type="hidden" value="{{ pessoa.id }}" id="p_id">
+            <input class="submit-btn" type="submit" value="Enviar" onclick="update_c(event)" id="update">
+
+        </form>
+
+
+    </div>
+
+
+{% endblock %}

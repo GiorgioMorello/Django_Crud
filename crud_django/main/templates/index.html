@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    CRUD
+{% endblock %}
+
+
+{% block body %}
+
+    <h2 class="title">Usuários</h2>
+    <ul class="pessoas_list" id="persons">
+
+        {% for pessoa in pessoas %}
+            <li id="info" class="hidden flex card">
+                <a href="{% url 'editar' pessoa.id %}" class="text-card">{{ pessoa.id }} - {{ pessoa.nome }}</a>
+                <button class="delete-btn" onclick="delete_url({{ pessoa.id }}, '{{ pessoa.nome }}', event)">Deletar</button>
+            </li>
+        {% empty %}
+        <li>Não há usuários</li>
+        {% endfor %}
+    </ul>
+
+
+
+    <form method="POST" action="" class="flex-form">{% csrf_token %}
+        <label for="nome_c">Nome</label>
+        <input type="text" placeholder="Digite seu nome" name="nome" id="nome_c" class="input">
+
+        <label for="email_c">E-mail</label>
+        <input type="email" placeholder="Digite seu email" name="email" id="email_c" class="input">
+
+        <input class="submit-btn" type="submit" value="Enviar" onclick="save_client(event)">
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+            {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    {% block head %}
+    {% endblock %}
+
+
+</head>
+
+
+<body>
+
+    <div onclick="hide_modal(event)" id="modal_delete" class="modal_d" style="display: none">
+        <p id="modal_text"></p>
+        <button id="delete-btn" class="delete-btn">Apagar</button>
+    </div>
+
+
+
+    <div id="e_modal" class="modal" style="display: none">
+        <div class="modal-content" style="background: rgba(255, 0, 0, 0.9); width: 350px; height: 42px">
+            <div class="msg">
+                <p id="text_e">Erro ao alterar os dados. Preencha novamente</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="s_modal" class="modal" style="display: none">
+        <div class="modal-content">
+            <div class="msg">
+                <p id="text_s">Dados alterados com sucesso</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+
+
+
+
+
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
