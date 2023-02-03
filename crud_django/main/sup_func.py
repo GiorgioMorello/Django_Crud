@@ -24,12 +24,9 @@ def check_email_db(id: int, cliente_email: str, pessoa_obj: object)-> bool:
         pessoa_existente = pessoa_obj.objects.filter(email=cliente_email)
         print(pessoa_existente)
         if pessoa_existente is not None:
-            print("JA existe")
             qs = pessoa_existente.exclude(id=id)
         if qs.exists():
-            print("Email ja existe")
             return True  # Caso o email já exista
 
     except:
-        print("AKI DIZ QUE FOI")
         return False
