@@ -12,9 +12,8 @@ def save_data(id: int, nome: str, email: str, pessoa_obj: object) -> bool:
         return False
 
 
-def check_email_syntax(cliente_email: str):
+def check_email_syntax(cliente_email: str)-> bool:
     if not re.fullmatch(re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+'), cliente_email):
-        print("ERRROR syntax")
         return True
 
 
