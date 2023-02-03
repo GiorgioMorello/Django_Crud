@@ -22,7 +22,6 @@ def check_email_db(id: int, cliente_email: str, pessoa_obj: object)-> bool:
 
     try:
         pessoa_existente = pessoa_obj.objects.filter(email=cliente_email)
-        print(pessoa_existente)
         if pessoa_existente is not None:
             qs = pessoa_existente.exclude(id=id)
         if qs.exists():
